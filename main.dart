@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, avoid_print, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_prueba_1/pages/guns.dart';
+import 'package:flutter_prueba_1/pages/twitterLabels.dart';
+
+
 
 void main() => runApp(MiAppPrueba());
 
@@ -28,9 +32,32 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body:  cuerpo()
-    
+      
+      body: Center(
+        child: Container(
+         
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              ElevatedButton(
+              onPressed: (){
+              Route route = 
+                MaterialPageRoute(builder: (__)=>gunsPage());
+                Navigator.push(context, route);
+               },  child: Text("GTA SA Guns"),
+              ),
+              ElevatedButton(
+              onPressed: (){
+              Route route = 
+                MaterialPageRoute(builder: (__)=>twitterLabelsPage());
+                Navigator.push(context, route);
+               },  child: Text("Twitter Labels"),
+              ),
+            ], 
+          ),
+        ),
+      ),
     );
   }
 }
@@ -40,7 +67,7 @@ return Text("data");
 }
 Widget cuerpo(){
   return  Container(
-        decoration: BoxDecoration(
+         decoration: BoxDecoration(
         image: DecorationImage(image: NetworkImage("https://c.tenor.com/lDV21olE9WAAAAAd/gta-v-flip.gif"),
         fit: BoxFit.cover,)
         ),
@@ -48,7 +75,8 @@ Widget cuerpo(){
       child: ListView(
       
       children: [
-        guns(),
+        
+        
 
         ],
       ),
@@ -56,31 +84,7 @@ Widget cuerpo(){
   );
 }
 
-Widget guns(){
-  return   Container(
-    padding: EdgeInsets.all(50.0), 
-    child: Center (
-    child: Column( children: [
-       
-        Text("Tec-9", style: TextStyle( color: Colors.red, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/TEC9-GTAVC.png"),
-        Text("MP5", style: TextStyle( color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/MP5-GTAVCS.png"),
-        Text("Micro-SMG", style: TextStyle( color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/MicroSMG-GTAVC.png"),
-        Text("Flamethrower", style: TextStyle( color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/Flamethrower-GTASA.png"),
-        Text("Pump Action Shotgun", style: TextStyle( color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/PumpActionShotgun-GTAVC.png"),
-        Text("Sniper Rifle", style: TextStyle( color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
-        Image.network("https://gtwfilesie.grandtheftwiki.com/SniperRifle-GTAIV.png"),
-       
-      
-        ],
-      ),
-    ),
-  );
-}
+
 Widget botonDateTime(){
   return ElevatedButton(
           
@@ -91,4 +95,16 @@ Widget botonDateTime(){
     }, child: null, 
   );
 }
-//√
+
+Widget botonGuns(){
+
+  return Container(
+    child: Center(
+      child: Column(
+        children: [
+          
+        ],
+      ),
+    ),
+  );
+}
